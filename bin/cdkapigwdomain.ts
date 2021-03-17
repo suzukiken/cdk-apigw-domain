@@ -4,4 +4,7 @@ import * as cdk from '@aws-cdk/core';
 import { CdkapigwdomainStack } from '../lib/cdkapigwdomain-stack';
 
 const app = new cdk.App();
-new CdkapigwdomainStack(app, 'CdkapigwdomainStack');
+new CdkapigwdomainStack(app, 'CdkapigwdomainStack', { env: {
+    account: process.env.CDK_DEFAULT_ACCOUNT, 
+    region: process.env.CDK_DEFAULT_REGION
+}});
